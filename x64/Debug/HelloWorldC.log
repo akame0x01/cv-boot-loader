@@ -1,0 +1,27 @@
+﻿  bmp.c
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(39,2): error C4235: extensão não padrão usada: palavra-chave '__asm' sem suporte nesta arquitetura
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,7): error C2065: 'mov': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,7): error C2146: erro de sintaxe: ';' ausente antes do identificador 'ebx'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,10): error C2065: 'ebx': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,3): error C2146: erro de sintaxe: ';' ausente antes do identificador 'mov'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,7): error C2065: 'mov': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,7): error C2146: erro de sintaxe: ';' ausente antes do identificador 'eax'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,10): error C2065: 'eax': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,12): error C2059: erro de sintaxe: '['
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(54,1): fatal  error C1004: fim de arquivo inesperado encontrado
+  main.c
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(39,2): error C4235: extensão não padrão usada: palavra-chave '__asm' sem suporte nesta arquitetura
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,7): error C2065: 'mov': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,7): error C2146: erro de sintaxe: ';' ausente antes do identificador 'ebx'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(40,10): error C2065: 'ebx': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,3): error C2146: erro de sintaxe: ';' ausente antes do identificador 'mov'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,7): error C2065: 'mov': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,7): error C2146: erro de sintaxe: ';' ausente antes do identificador 'eax'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,10): error C2065: 'eax': identificador não declarado
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\bmp.c(41,12): error C2059: erro de sintaxe: '['
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(12,34): error C2143: erro de sintaxe: ';' ausente antes de '{'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(49,16): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(54,39): warning C4047: 'função': 'unsigned char *' difere em níveis de indireção de 'int'
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(54,30): warning C4024: 'checkBits': tipos diferentes para parâmetro formal e real 1
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(64,1): fatal  error C1004: fim de arquivo inesperado encontrado
+  Gerando Código...

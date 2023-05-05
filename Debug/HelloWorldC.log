@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(49,16): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\moraes\Desktop\Projects\HelloWorldC\HelloWorldC\main.c(53,30): warning C4133: 'função': tipos incompatíveis - de 'int *' para 'unsigned char *'
+  HelloWorldC.vcxproj -> C:\Users\moraes\Desktop\Projects\HelloWorldC\Debug\HelloWorldC.exe
