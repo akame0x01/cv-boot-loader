@@ -1,5 +1,5 @@
 #include "bmp.h"
-#include <stdio.h>
+
 
 int celling(int x, int y) {
 	// if(x % y > 0) {
@@ -44,10 +44,9 @@ int checkBits(unsigned char* ch, int posicao) {
 		jc ret1
 		xor eax, eax
 		jmp fim
-
 		ret1 :
 		xor eax, eax
 			inc eax
-		fim :
+			fim :
 	};
 }

@@ -8,16 +8,21 @@
 #include "bmp.h"
 
 BFHeader bf;
+//char** repBMP; Representaçao do BMP na memória
 
 int main(int argc, char* argv[]) {
 
 	FILE* fp;
-	char arg[] = "C:\\Users\\moraes\\Documents\\1.bmp";
+	char arg[] = "C:\\Users\\moraes\\Desktop\\2.bmp";
 	int larguraTotal = 0;
-	int bytesPerRow = 0;
-	int x, y;
+	int bytesPerRow;
+	int y, x;
 	int byteAtual = 0;
 	int cont = 0;
+	int qntBits = 0;
+	int qntBitsSeguidos = 0;
+	unsigned char temp = 0;  
+	unsigned char bitAtual = 1; //O bit definido no começo é branco
 
 	fp = fopen(arg, "rb");
 	if (!fp) {
@@ -37,26 +42,70 @@ int main(int argc, char* argv[]) {
 
 	if (bf.BIHeader.bitsPerPixel != 1) {
 		printf("Só Funciona com imagens monocromáticas\n");
-		fclose(fp);
 		return(0);
 	};
 
 	larguraTotal = bf.BIHeader.bitsPerPixel * bf.BIHeader.imageWidth;
 	bytesPerRow = celling(larguraTotal, 32) * 4;
+	//repBMP = (unsigned char**)malloc(bf.BIHeader.imageHeigth * sizeof(unsigned char*)); malloc é um metodo que guarda um espaço na memoria reservado em bytes 
 
 	fseek(fp, bf.pixelDataOffset, SEEK_SET);
 
+	//for (y = 0; y < bf.BIHeader.imageHeigth; y++) {
+	//	repBMP[y] = (unsigned char*)malloc(larguraTotal * sizeof(char) + 1);
+	//	memset(repBMP[y], '\0', (sizeof(char) * larguraTotal + 1));
+	//	qntBits = 0;
+	//	for (x = 0; x < bytesPerRow; x++) {
+
+	//		fread(&byteAtual, 1, 1, fp);
+
+	//		for (cont = 7; cont >= 0; cont--) {
+	//			if (qntBits < larguraTotal) {
+	//				if (checkBits(&byteAtual, cont) == 1) repBMP[y][qntBits] = '+';
+	//				else repBMP[y][qntBits] = '-';
+	//			}
+	//			qntBits++;
+	//			//e quando essa caralhada de for termina,a  representaçao na imagem na memória estará completa,onde 1 = "+" e 0 = "-"
+	//		}
+	//	}
+	//}
+
+	//for (y = bf.BIHeader.imageHeigth - 1; y >= 0; y--) {
+	//	printf("%s\n", repBMP[y]);
+	//};
+
+
 	for (y = 0; y < bf.BIHeader.imageHeigth; y++) {
-		for (x = 0; x < bytesPerRow; x++); {
+
+		/*repBMP[y] = (unsigned char*)malloc(larguraTotal * sizeof(char) + 1);
+		memset(repBMP[y], '\0', (sizeof(char) * larguraTotal + 1));*/
+
+		qntBits = 0; // aqui é zerada as duas variaveis pq acabou 1 linha
+		qntBitsSeguidos = 0; 
+
+		for (x = 0; x < bytesPerRow; x++) {
+
 			fread(&byteAtual, 1, 1, fp);
+
 			for (cont = 7; cont >= 0; cont--) {
-				printf("%d\n", checkBits(&byteAtual, cont));
+				if (qntBits < larguraTotal) {
+					temp = checkBits(&byteAtual, cont);
+					if (temp == bitAtual) qntBitsSeguidos++;
+					else {
+						printf("%d, ", qntBitsSeguidos);
+						qntBitsSeguidos = 1;
+						bitAtual = temp;
+					}
+					if (qntBitsSeguidos >= 255) {
+						return 0;
+					}
+				}
+				qntBits++;
+			
 			}
 		}
-	};
-
-	printf("largura total : %d\n", larguraTotal);
-	printf("bytes por linha : %d\n", bytesPerRow);
+		printf("%d, ", qntBitsSeguidos);
+	}
 
 	return(0);
 }
