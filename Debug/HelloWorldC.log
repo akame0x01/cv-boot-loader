@@ -1,5 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: O diretório intermediário (Debug\) contém arquivos compartilhados de outro projeto (HelloWorldC.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
   main.c
 C:\Users\moraes\Desktop\Projects\LeitorBMP\HelloWorldC\main.c(78,16): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\moraes\Desktop\Projects\LeitorBMP\HelloWorldC\main.c(92,23): warning C4133: 'função': tipos incompatíveis - de 'int *' para 'unsigned char *'
+C:\Users\moraes\Desktop\Projects\LeitorBMP\HelloWorldC\main.c(95,23): warning C4133: 'função': tipos incompatíveis - de 'int *' para 'unsigned char *'
   HelloWorldC.vcxproj -> C:\Users\moraes\Desktop\Projects\LeitorBMP\Debug\LeitorBMP.exe

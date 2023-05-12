@@ -13,7 +13,7 @@ BFHeader bf;
 int main(int argc, char* argv[]) {
 
 	FILE* fp;
-	char arg[] = "C:\\Users\\moraes\\Desktop\\2.bmp";
+	char arg[] = "C:\\Users\\moraes\\Desktop\\1.bmp";
 	int larguraTotal = 0;
 	int bytesPerRow;
 	int y, x;
@@ -76,6 +76,8 @@ int main(int argc, char* argv[]) {
 
 
 	for (y = 0; y < bf.BIHeader.imageHeigth; y++) {
+		
+		
 
 		/*repBMP[y] = (unsigned char*)malloc(larguraTotal * sizeof(char) + 1);
 		memset(repBMP[y], '\0', (sizeof(char) * larguraTotal + 1));*/
@@ -84,6 +86,7 @@ int main(int argc, char* argv[]) {
 		qntBitsSeguidos = 0; 
 
 		for (x = 0; x < bytesPerRow; x++) {
+			
 
 			fread(&byteAtual, 1, 1, fp);
 
@@ -92,7 +95,7 @@ int main(int argc, char* argv[]) {
 					temp = checkBits(&byteAtual, cont);
 					if (temp == bitAtual) qntBitsSeguidos++;
 					else {
-						printf("%d, ", qntBitsSeguidos);
+						printf("%d,", qntBitsSeguidos);
 						qntBitsSeguidos = 1;
 						bitAtual = temp;
 					}
@@ -104,7 +107,7 @@ int main(int argc, char* argv[]) {
 			
 			}
 		}
-		printf("%d, ", qntBitsSeguidos);
+		printf("%d,", qntBitsSeguidos);
 	}
 
 	return(0);
